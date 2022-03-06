@@ -1,0 +1,28 @@
+#container{
+    background-size: cover;
+    height: 100vh;
+}
+
+.circle {
+    background-color: rgb(0, 0, 0);
+
+    opacity: 0.5;
+    border-radius: 50%;
+
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle:hover {
+    opacity: 1;
+    transition: .3s;
+}
+
+.row {
+    height: 9vh;
+    text-align: center;
+}
