@@ -23,7 +23,7 @@ function createGrid(){
             colEl.setAttribute('id', 'row' + index + 'col' + i);
             colEl.setAttribute('class', 'col-sm');
 
-            colEl.innerHTML = 'row ' + index + ' col ' + i;
+            //colEl.innerHTML = 'row ' + index + ' col ' + i;
 
             rowEl.appendChild(colEl);
         }
@@ -48,13 +48,8 @@ function placeInteraction(roomnumber){
         var circle = createCircle(index);
         currTableEl.appendChild(circle);
 
-        //gets circle from the DOM, applies onclick that has the index for data array
-        //within foreach it will overwrite the number. So all circles will have the same onclick.
-        var circle = document.getElementById('circle'+index)
-        circle.onclick = function(){
-            rowcolid = this.id.substr(this.id.length - 1);
-            loadNewPage(rooms[roomnumber].rowcols[rowcolid].destination);
-        };
+        //function to set circle onclick + add rotation
+        setCircle(roomnumber, index);
     }
 }
 
@@ -70,6 +65,29 @@ function createCircle(destination){
     circle.appendChild(arrow);
 
     return circle;
+}
+
+// sets circle onclick and rotation.
+function setCircle(roomnumber, index){
+    var circle = document.getElementById('circle'+index)
+
+    if(rooms[roomnumber].rowcols[index].rotation) {
+        var rotation = rooms[roomnumber].rowcols[index].rotation;
+    }
+    else {
+        var rotation = 0;
+    }
+
+    circle.style.msTransform = 'rotate('+rotation+'deg)'; // IE9
+    circle.style.transform = 'rotate('+rotation+'deg)';
+
+    circle.onclick = function(){
+        rowcolid = this.id.substr(this.id.length - 1);
+
+        //if destination is empty, dont run loadnewpage
+        var destination = rooms[roomnumber].rowcols[rowcolid].destination;
+        if(destination) loadNewPage(rooms[roomnumber].rowcols[rowcolid].destination);
+    };
 }
 
 function loadNewPage(destination){
