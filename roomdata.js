@@ -1,17 +1,17 @@
 var rooms = [
     {
-        'roomname':'entrance',
+        'roomname':'Entrance',
         'roomimage':'entrance',
         'rowcols' : [
             {
                 'name':'upstairs',
-                'destination':'georgewashingtonroom',
+                'destination':'GeorgeWashington',
                 'row':4,
                 'col':5
             },
             {
                 'name':'left',
-                'destination':'',
+                'destination':'Hamilton',
                 'row':7,
                 'col':1
             },{
@@ -22,18 +22,18 @@ var rooms = [
             }
         ]
     },{
-        'roomname':'georgewashingtonroom',
-        'roomimage':'georgewashingtonroom',
+        'roomname':'GeorgeWashington',
+        'roomimage':'georgewashington',
         'rowcols' : [
             {
                 'name':'return',
-                'destination':'entrance',
+                'destination':'Entrance',
                 'rotation':180,
-                'row':10,
+                'row':9,
                 'col':5
             },{
-                'name':'',
-                'destination':'',
+                'name':'Hamilton',
+                'destination':'Hamilton',
                 'rotation':90,
                 'row':5,
                 'col':8
@@ -43,6 +43,18 @@ var rooms = [
                 'rotation':90,
                 'row':6,
                 'col':10
+            }
+        ]
+    },{
+        'roomname':'Hamilton',
+        'roomimage':'hamilton',
+        'rowcols':[
+            {
+                'name':'',
+                'destination':'Entrance',
+                'rotation':180,
+                'row':9,
+                'col':5
             }
         ]
     }

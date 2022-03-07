@@ -7,7 +7,7 @@ window.onload = function(){
     container.style.backgroundImage = "url('img/museum.jpg')";
     document.getElementById('welcome-btn').onclick = function(){
         welcomePage.style.display = 'none';
-        loadNewPage('entrance');
+        loadNewPage('Entrance');
     };
 }
 
@@ -40,7 +40,7 @@ function clearGrid(){
 // Retrieves grid locations for interactive elements
 function placeInteraction(roomnumber){
     //if no roomnumber is given, finds index of entrance
-    if(!roomnumber) roomnumber = rooms.findIndex( ({ roomname }) => roomname === 'entrance' );
+    if(!roomnumber) roomnumber = rooms.findIndex( ({ roomname }) => roomname === 'Entrance' );
 
     //loops through the rows and columns for current room and creates circles in those grid locations
     for(index=0; index <= rooms[roomnumber].rowcols.length-1; index++){
@@ -49,7 +49,7 @@ function placeInteraction(roomnumber){
 
         var currTableEl = document.getElementById('row'+currRow+'col'+currCol);
         
-        var circle = createCircle(index);
+        var circle = createCircle(roomnumber, index);
         currTableEl.appendChild(circle);
 
         //function to set circle onclick + add rotation
@@ -58,17 +58,30 @@ function placeInteraction(roomnumber){
 }
 
 // function creates the html circle with arrow used for interaction
-function createCircle(destination){
+function createCircle(roomnumber, destination){
+    var circleContainer = document.createElement('div');
+    var text = document.createElement('p');
     var circle = document.createElement('div');
     var arrow = document.createElement('i');
 
+    circleContainer.setAttribute('class', 'circleContainer');
+
     circle.setAttribute('id', 'circle' + destination);
-    circle.setAttribute('class', 'circle');
+
+    circle.setAttribute('class', 'circle circleContainerChild');
+    text.setAttribute('class', 'circleContainerChild');
+
     arrow.setAttribute('class', 'fa-solid fa-angle-up fa-inverse fa-2xl');
+   
+    if(rooms[roomnumber].rowcols[destination].destination) {
+        text.innerHTML = "Go to: " + rooms[roomnumber].rowcols[destination].destination.replace(/([A-Z])/g, ' $1');
+    }
 
     circle.appendChild(arrow);
+    circleContainer.appendChild(circle);
+    circleContainer.appendChild(text);
 
-    return circle;
+    return circleContainer;
 }
 
 // sets circle onclick and rotation.
