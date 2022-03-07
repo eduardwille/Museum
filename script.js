@@ -1,10 +1,14 @@
 var container = document.getElementById('container');
+var welcomePage = document.getElementById('welcome-page');
 var gridContainer = document.getElementById('grid-container');
 
+// load welcome screen
 window.onload = function(){
-    container.style.backgroundImage = "url('img/entrance.jpg')";
-    createGrid();
-    placeInteraction();
+    container.style.backgroundImage = "url('img/museum.jpg')";
+    document.getElementById('welcome-btn').onclick = function(){
+        welcomePage.style.display = 'none';
+        loadNewPage('entrance');
+    };
 }
 
 // Creates the grid used for interactive elements
