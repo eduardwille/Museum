@@ -7,16 +7,16 @@ var rooms = [
                 'name':'upstairs',
                 'destination':'georgewashingtonroom',
                 'row':4,
-                'col':5,
+                'col':5
             },
             {
                 'name':'left',
-                'destination':'destination2',
+                'destination':'',
                 'row':7,
                 'col':1
             },{
                 'name':'right',
-                'destination':'destination3',
+                'destination':'',
                 'row':7,
                 'col':9
             }
@@ -25,6 +25,21 @@ var rooms = [
     {
         'roomname':'georgewashingtonroom',
         'roomimage':'georgewashingtonroom',
-        'rowcols' : []
+        'rowcols' : [{
+                'name':'return',
+                'destination':'entrance',
+                'row':10,
+                'col':5
+        },{
+                'name':'',
+                'destination':'',
+                'row':5,
+                'col':8
+        },{
+                'name':'',
+                'destination':'',
+                'row':6,
+                'col':10
+        }]
     }
 ];

@@ -23,7 +23,7 @@ function createGrid(){
             colEl.setAttribute('id', 'row' + index + 'col' + i);
             colEl.setAttribute('class', 'col-sm');
 
-            colEl.innerHTML = 'row ' + index + ' col ' + i;
+            //colEl.innerHTML = 'row ' + index + ' col ' + i;
 
             rowEl.appendChild(colEl);
         }
@@ -49,11 +49,14 @@ function placeInteraction(roomnumber){
         currTableEl.appendChild(circle);
 
         //gets circle from the DOM, applies onclick that has the index for data array
-        //within foreach it will overwrite the number. So all circles will have the same onclick.
+        //within foreach it will overwrite the number. So all circles will have the same onclick
         var circle = document.getElementById('circle'+index)
         circle.onclick = function(){
             rowcolid = this.id.substr(this.id.length - 1);
-            loadNewPage(rooms[roomnumber].rowcols[rowcolid].destination);
+
+            //if destination is empty, dont run loadnewpage
+            var destination = rooms[roomnumber].rowcols[rowcolid].destination;
+            if(destination) loadNewPage(rooms[roomnumber].rowcols[rowcolid].destination);
         };
     }
 }
