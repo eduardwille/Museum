@@ -21,25 +21,29 @@ var rooms = [
                 'col':9
             }
         ]
-    },
-    {
+    },{
         'roomname':'georgewashingtonroom',
         'roomimage':'georgewashingtonroom',
-        'rowcols' : [{
+        'rowcols' : [
+            {
                 'name':'return',
                 'destination':'entrance',
+                'rotation':180,
                 'row':10,
                 'col':5
-        },{
+            },{
                 'name':'',
                 'destination':'',
+                'rotation':90,
                 'row':5,
                 'col':8
-        },{
+            },{
                 'name':'',
                 'destination':'',
+                'rotation':90,
                 'row':6,
                 'col':10
-        }]
+            }
+        ]
     }
 ];
