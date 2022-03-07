@@ -23,7 +23,7 @@ function createGrid(){
             colEl.setAttribute('id', 'row' + index + 'col' + i);
             colEl.setAttribute('class', 'col-sm');
 
-            colEl.innerHTML = 'row ' + index + ' col ' + i;
+            //colEl.innerHTML = 'row ' + index + ' col ' + i;
 
             rowEl.appendChild(colEl);
         }

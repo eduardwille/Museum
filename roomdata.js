@@ -4,12 +4,21 @@ var rooms = [
         'roomimage':'img/entrance.jpg',
         'rowcols' : [
             {
-                'row':1,
+                'name':'upstairs',
+                'destination':'',
+                'row':4,
                 'col':5,
             },
             {
-                'row':3,
-                'col':4
+                'name':'left',
+                'destination':'',
+                'row':7,
+                'col':1
+            },{
+                'name':'right',
+                'destination':'',
+                'row':7,
+                'col':9
             }
         ]
     }
