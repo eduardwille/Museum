@@ -32,8 +32,8 @@ var rooms = [
                 'row':9,
                 'col':5
             },{
-                'name':'',
-                'destination':'',
+                'name':'Hamilton',
+                'destination':'Hamilton',
                 'rotation':90,
                 'row':5,
                 'col':8
