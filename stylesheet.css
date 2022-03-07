@@ -1,6 +1,7 @@
 #container {
     background-size: cover;
     height: 100vh;
+    transition: background-color 1s; /* Maybe fade transitions for new background images */
 }  
 
 .row {

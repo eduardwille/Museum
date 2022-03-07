@@ -11,7 +11,7 @@ var rooms = [
             },
             {
                 'name':'left',
-                'destination':'',
+                'destination':'Hamilton',
                 'row':7,
                 'col':1
             },{
@@ -43,6 +43,18 @@ var rooms = [
                 'rotation':90,
                 'row':6,
                 'col':10
+            }
+        ]
+    },{
+        'roomname':'Hamilton',
+        'roomimage':'hamilton',
+        'rowcols':[
+            {
+                'name':'',
+                'destination':'Entrance',
+                'rotation':180,
+                'row':9,
+                'col':5
             }
         ]
     }
