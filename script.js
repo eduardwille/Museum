@@ -23,11 +23,14 @@ function createGrid(){
             colEl.setAttribute('id', 'row' + index + 'col' + i);
             colEl.setAttribute('class', 'col-sm');
 
-            //colEl.innerHTML = 'row ' + index + ' col ' + i;
+            colEl.innerHTML = 'row ' + index + ' col ' + i;
 
             rowEl.appendChild(colEl);
         }
     }
+}
+function clearGrid(){
+    gridContainer.innerHTML = "";
 }
 
 // Retrieves grid locations for interactive elements
@@ -42,21 +45,37 @@ function placeInteraction(roomnumber){
 
         var currTableEl = document.getElementById('row'+currRow+'col'+currCol);
         
-        var circle = createCircle();
-
+        var circle = createCircle(index);
         currTableEl.appendChild(circle);
+
+        //gets circle from the DOM, applies onclick that has the index for data array
+        //within foreach it will overwrite the number. So all circles will have the same onclick.
+        var circle = document.getElementById('circle'+index)
+        circle.onclick = function(){
+            rowcolid = this.id.substr(this.id.length - 1);
+            loadNewPage(rooms[roomnumber].rowcols[rowcolid].destination);
+        };
     }
 }
 
 // function creates the html circle with arrow used for interaction
-function createCircle(){
+function createCircle(destination){
     var circle = document.createElement('div');
     var arrow = document.createElement('i');
 
+    circle.setAttribute('id', 'circle' + destination);
     circle.setAttribute('class', 'circle');
     arrow.setAttribute('class', 'fa-solid fa-angle-up fa-inverse fa-2xl');
 
     circle.appendChild(arrow);
 
     return circle;
+}
+
+function loadNewPage(destination){
+    clearGrid();
+    createGrid();
+    placeInteraction(rooms.findIndex( ({ roomname }) => roomname === destination ));
+
+    container.style.backgroundImage = 'url(img/'+destination+'.jpg)';
 }
