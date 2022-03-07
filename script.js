@@ -7,6 +7,7 @@ window.onload = function(){
     placeInteraction();
 }
 
+// Creates the grid used for interactive elements
 function createGrid(){
     var rows = 10;
     var cols = 10;
@@ -29,8 +30,12 @@ function createGrid(){
     }
 }
 
+// Retrieves grid locations for interactive elements
 function placeInteraction(roomnumber){
-    if(!roomnumber) roomnumber = 0;
+    //if no roomnumber is given, finds index of entrance
+    if(!roomnumber) roomnumber = rooms.findIndex( ({ roomname }) => roomname === 'entrance' );
+
+    //loops through the rows and columns for current room and creates circles in those grid locations
     for(index=0; index <= rooms[roomnumber].rowcols.length-1; index++){
         var currRow = rooms[roomnumber].rowcols[index].row;
         var currCol = rooms[roomnumber].rowcols[index].col;
@@ -43,6 +48,7 @@ function placeInteraction(roomnumber){
     }
 }
 
+// function creates the html circle with arrow used for interaction
 function createCircle(){
     var circle = document.createElement('div');
     var arrow = document.createElement('i');
