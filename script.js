@@ -29,12 +29,28 @@ function createGrid(){
     }
 }
 
-function placeInteraction(){
-    var row = 1;
-    var col = 5;
+function placeInteraction(roomnumber){
+    if(!roomnumber) roomnumber = 0;
+    for(index=0; index <= rooms[roomnumber].rowcols.length-1; index++){
+        var currRow = rooms[roomnumber].rowcols[index].row;
+        var currCol = rooms[roomnumber].rowcols[index].col;
 
-    var foundCol = document.getElementById('row'+row+'col'+col);
-    console.log(foundCol);
+        var currTableEl = document.getElementById('row'+currRow+'col'+currCol);
+        
+        var circle = createCircle();
 
-    
+        currTableEl.appendChild(circle);
+    }
+}
+
+function createCircle(){
+    var circle = document.createElement('div');
+    var arrow = document.createElement('i');
+
+    circle.setAttribute('class', 'circle');
+    arrow.setAttribute('class', 'fa-solid fa-angle-up fa-inverse fa-2xl');
+
+    circle.appendChild(arrow);
+
+    return circle;
 }
