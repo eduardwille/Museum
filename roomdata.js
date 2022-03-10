@@ -1,22 +1,57 @@
 var rooms = [
     {
+        'roomname':'Floor1',
+        'roomimage':'entrance',
+        'rowcols':[
+            {
+                'name':'return',
+                'destination':'Entrance',
+                'rotation':180,
+                'row':9,
+                'col':5
+            }
+        ]
+    },{
+        'roomname':'Floor2',
+        'roomimage':'entrance',
+        'rowcols':[
+            {
+                'name':'return',
+                'destination':'Entrance',
+                'rotation':180,
+                'row':9,
+                'col':5
+            }
+        ]
+    },{
+        'roomname':'Floor3',
+        'roomimage':'entrance',
+        'rowcols':[
+            {
+                'name':'return',
+                'destination':'Entrance',
+                'rotation':180,
+                'row':9,
+                'col':5
+            }
+        ]
+    },{
         'roomname':'Entrance',
         'roomimage':'entrance',
         'rowcols' : [
             {
-                'name':'upstairs',
-                'destination':'GeorgeWashington',
-                'row':4,
-                'col':5
-            },
-            {
-                'name':'left',
-                'destination':'Hamilton',
+                'name':'American Revolution',
+                'destination':'Floor1',
                 'row':7,
                 'col':1
             },{
-                'name':'right',
-                'destination':'',
+                'name':'British-Indië',
+                'destination':'Floor2',
+                'row':4,
+                'col':5
+            },{
+                'name':'Workplace of the World',
+                'destination':'Floor3',
                 'row':7,
                 'col':9
             }
@@ -31,18 +66,6 @@ var rooms = [
                 'rotation':180,
                 'row':9,
                 'col':5
-            },{
-                'name':'Hamilton',
-                'destination':'Hamilton',
-                'rotation':90,
-                'row':5,
-                'col':8
-            },{
-                'name':'',
-                'destination':'',
-                'rotation':90,
-                'row':6,
-                'col':10
             }
         ]
     },{
@@ -50,7 +73,7 @@ var rooms = [
         'roomimage':'hamilton',
         'rowcols':[
             {
-                'name':'',
+                'name':'return',
                 'destination':'Entrance',
                 'rotation':180,
                 'row':9,
