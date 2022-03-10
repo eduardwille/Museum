@@ -39,10 +39,8 @@ function clearGrid(){
 
 // Retrieves grid locations for interactive elements
 function placeInteraction(roomnumber){
-    //if no roomnumber is given, finds index of entrance
-    if(!roomnumber) roomnumber = rooms.findIndex( ({ roomname }) => roomname === 'Entrance' );
-
     //loops through the rows and columns for current room and creates circles in those grid locations
+    console.log(roomnumber);
     for(index=0; index <= rooms[roomnumber].rowcols.length-1; index++){
         var currRow = rooms[roomnumber].rowcols[index].row;
         var currCol = rooms[roomnumber].rowcols[index].col;
@@ -73,8 +71,8 @@ function createCircle(roomnumber, destination){
 
     arrow.setAttribute('class', 'fa-solid fa-angle-up fa-inverse fa-2xl');
    
-    if(rooms[roomnumber].rowcols[destination].destination) {
-        text.innerHTML = "Go to: " + rooms[roomnumber].rowcols[destination].destination.replace(/([A-Z])/g, ' $1');
+    if(rooms[roomnumber].rowcols[destination].name) {
+        text.innerHTML = "Go to: " + rooms[roomnumber].rowcols[destination].name/*.replace(/([A-Z])/g, ' $1')*/;
     }
 
     circle.appendChild(arrow);
@@ -102,15 +100,15 @@ function setCircle(roomnumber, index){
         rowcolid = this.id.substr(this.id.length - 1);
 
         //if destination is empty, dont run loadnewpage
-        var destination = rooms[roomnumber].rowcols[rowcolid].destination;
-        if(destination) loadNewPage(rooms[roomnumber].rowcols[rowcolid].destination);
+        if(rooms[roomnumber].rowcols[rowcolid].destination) loadNewPage(rooms[roomnumber].rowcols[rowcolid].destination);
     };
 }
 
-function loadNewPage(destination){
+function loadNewPage(room){
     clearGrid();
     createGrid();
-    placeInteraction(rooms.findIndex( ({ roomname }) => roomname === destination ));
+    placeInteraction(rooms.findIndex( ({ roomname }) => roomname === room ));
 
-    container.style.backgroundImage = 'url(img/'+destination+'.jpg)';
+    var roomdata = rooms.find( ({ roomname }) => roomname === room);
+    container.style.backgroundImage = 'url(img/'+roomdata.roomimage+'.jpg)';
 }
