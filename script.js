@@ -70,7 +70,7 @@ function createCircle(roomnumber, destination){
 
     arrow.setAttribute('class', 'fa-solid fa-angle-up fa-inverse fa-2xl');
    
-    if(rooms[roomnumber].rowcols[destination].destination) {
+    if(rooms[roomnumber].rowcols[destination].name) {
         text.innerHTML = "Go to: " + rooms[roomnumber].rowcols[destination].name/*.replace(/([A-Z])/g, ' $1')*/;
     }
 
