@@ -40,6 +40,7 @@ function clearGrid(){
 // Retrieves grid locations for interactive elements
 function placeInteraction(roomnumber){
     //loops through the rows and columns for current room and creates circles in those grid locations
+    console.log(roomnumber);
     for(index=0; index <= rooms[roomnumber].rowcols.length-1; index++){
         var currRow = rooms[roomnumber].rowcols[index].row;
         var currCol = rooms[roomnumber].rowcols[index].col;

@@ -10,8 +10,8 @@ var rooms = [
                 'row':9,
                 'col':5
             },{
-                'name':'Revolutie',
-                'destination':'',
+                'name':'Amerikaanse Revolutie',
+                'destination':'Amerikaanse Revolutie',
                 'row':7,
                 'col':1
             },{
@@ -22,12 +22,12 @@ var rooms = [
                 'col':0
             },{
                 'name':'Koloniën en Plantages',
-                'destination':'',
+                'destination':'Koloniën en Plantages',
                 'row':4,
                 'col':5
             },{
                 'name':'Regeringsstelsel',
-                'destination':'',
+                'destination':'Regeringsstelsel',
                 'row':7,
                 'col':9
             },{
@@ -36,6 +36,42 @@ var rooms = [
                 'rotation':90,
                 'row':7,
                 'col':10
+            }
+        ]
+    },{ // Amerikaanse Revolutie
+        'roomname':'Amerikaanse Revolutie',
+        'roomimage':'entrance',
+        'rowcols':[
+            {
+            'name':'Terug',
+            'destination':'Floor1',
+            'rotation':180,
+            'row':9,
+            'col':5
+            }
+        ]
+    },{ // Kolonies en plantages
+        'roomname':'Koloniën en Plantages',
+        'roomimage':'entrance',
+        'rowcols':[
+            {
+            'name':'Terug',
+            'destination':'Floor1',
+            'rotation':180,
+            'row':9,
+            'col':5
+            }
+        ]
+    },{ // Regeringsstelsel
+        'roomname':'Regeringsstelsel',
+        'roomimage':'entrance',
+        'rowcols':[
+            {
+            'name':'Terug',
+            'destination':'Floor1',
+            'rotation':180,
+            'row':9,
+            'col':5
             }
         ]
     },{ // George Washington
@@ -78,19 +114,55 @@ var rooms = [
                 'col':5
             },{
                 'name':'EIC',
-                'destination':'',
+                'destination':'EIC',
                 'row':7,
                 'col':1
             },{
-                'name':'Revoluties',
-                'destination':'',
+                'name':'Britse Revoluties',
+                'destination':'Britse Revoluties',
                 'row':4,
                 'col':5
             },{
                 'name':'Opkomst Nationalisme India',
-                'destination':'',
+                'destination':'Opkomst Nationalisme India',
                 'row':7,
                 'col':9
+            }
+        ]
+    },{ // EIC
+        'roomname':'EIC',
+        'roomimage':'entrance',
+        'rowcols':[
+            {
+            'name':'Terug',
+            'destination':'Floor2',
+            'rotation':180,
+            'row':9,
+            'col':5
+            }
+        ]
+    },{ // Britse Revoluties
+        'roomname':'Britse Revoluties',
+        'roomimage':'entrance',
+        'rowcols':[
+            {
+            'name':'Terug',
+            'destination':'Floor2',
+            'rotation':180,
+            'row':9,
+            'col':5
+            }
+        ]
+    },{ // Opkomst Nationalisme India
+        'roomname':'Opkomst Nationalisme India',
+        'roomimage':'entrance',
+        'rowcols':[
+            {
+            'name':'Terug',
+            'destination':'Floor2',
+            'rotation':180,
+            'row':9,
+            'col':5
             }
         ]
     },
@@ -108,22 +180,59 @@ var rooms = [
                 'col':5
             },{
                 'name':'Industriële Revolutie',
-                'destination':'',
+                'destination':'Industriële Revolutie',
                 'row':7,
                 'col':1
             },{
                 'name':'Reform Bill',
-                'destination':'',
+                'destination':'Reform Bill',
                 'row':4,
                 'col':5
             },{
                 'name':'Klassen Maatschappij',
-                'destination':'',
+                'destination':'Klassen Maatschappij',
                 'row':7,
                 'col':9
             }
         ]
+    },{ // Industriële Revolutie
+        'roomname':'Industriële Revolutie',
+        'roomimage':'entrance',
+        'rowcols':[
+            {
+            'name':'Terug',
+            'destination':'Floor3',
+            'rotation':180,
+            'row':9,
+            'col':5
+            }
+        ]
+    },{ // Reform Bill
+        'roomname':'Reform Bill',
+        'roomimage':'entrance',
+        'rowcols':[
+            {
+            'name':'Terug',
+            'destination':'Floor3',
+            'rotation':180,
+            'row':9,
+            'col':5
+            }
+        ]
+    },{ // Klassen Maatschappij
+        'roomname':'Klassen Maatschappij',
+        'roomimage':'entrance',
+        'rowcols':[
+            {
+            'name':'Terug',
+            'destination':'Floor3',
+            'rotation':180,
+            'row':9,
+            'col':5
+            }
+        ]
     },
+    
     
     
     { // Entrance
