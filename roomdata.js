@@ -197,7 +197,7 @@ var rooms = [
         ]
     },{ // Industriële Revolutie
         'roomname':'Industriële Revolutie',
-        'roomimage':'entrance',
+        'roomimage':'werkplaats',
         'rowcols':[
             {
             'name':'Terug',
@@ -209,7 +209,7 @@ var rooms = [
         ]
     },{ // Reform Bill
         'roomname':'Reform Bill',
-        'roomimage':'entrance',
+        'roomimage':'reform',
         'rowcols':[
             {
             'name':'Terug',
@@ -221,7 +221,7 @@ var rooms = [
         ]
     },{ // Klassen Maatschappij
         'roomname':'Klassen Maatschappij',
-        'roomimage':'entrance',
+        'roomimage':'klassenmaatschappij',
         'rowcols':[
             {
             'name':'Terug',
