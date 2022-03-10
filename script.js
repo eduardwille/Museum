@@ -16,7 +16,7 @@ function createGrid(){
     var rows = 10;
     var cols = 10;
 
-    for(index = 0; index <= rows; index++){
+    for(index = 1; index <= rows; index++){
         var rowEl = document.createElement('div');
         rowEl.setAttribute('class', 'row');
         
@@ -72,7 +72,7 @@ function createCircle(roomnumber, destination){
     arrow.setAttribute('class', 'fa-solid fa-angle-up fa-inverse fa-2xl');
    
     if(rooms[roomnumber].rowcols[destination].name) {
-        text.innerHTML = "Go to: " + rooms[roomnumber].rowcols[destination].name/*.replace(/([A-Z])/g, ' $1')*/;
+        text.innerHTML = "Ga naar: " + rooms[roomnumber].rowcols[destination].name/*.replace(/([A-Z])/g, ' $1')*/;
     }
 
     circle.appendChild(arrow);
