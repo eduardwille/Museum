@@ -1,7 +1,7 @@
 var rooms = [
     { // Floor 1
         'roomname':'Floor1',
-        'roomimage':'entrance',
+        'roomimage':'americaentrance',
         'rowcols':[
             {
                 'name':'Terug',
@@ -13,7 +13,7 @@ var rooms = [
                 'name':'Amerikaanse Revolutie',
                 'destination':'Amerikaanse Revolutie',
                 'row':7,
-                'col':1
+                'col':2
             },{
                 'name':'George Washington',
                 'destination':'GeorgeWashington',
@@ -23,13 +23,13 @@ var rooms = [
             },{
                 'name':'Koloniën en Plantages',
                 'destination':'Koloniën en Plantages',
-                'row':4,
-                'col':5
+                'row':7,
+                'col':4
             },{
                 'name':'Regeringsstelsel',
                 'destination':'Regeringsstelsel',
                 'row':7,
-                'col':9
+                'col':7
             },{
                 'name':'Hamilton',
                 'destination':'Hamilton',
@@ -40,7 +40,7 @@ var rooms = [
         ]
     },{ // Amerikaanse Revolutie
         'roomname':'Amerikaanse Revolutie',
-        'roomimage':'entrance',
+        'roomimage':'americarevolutie',
         'rowcols':[
             {
             'name':'Terug',
@@ -52,7 +52,7 @@ var rooms = [
         ]
     },{ // Kolonies en plantages
         'roomname':'Koloniën en Plantages',
-        'roomimage':'entrance',
+        'roomimage':'slavernij',
         'rowcols':[
             {
             'name':'Terug',
@@ -64,7 +64,7 @@ var rooms = [
         ]
     },{ // Regeringsstelsel
         'roomname':'Regeringsstelsel',
-        'roomimage':'entrance',
+        'roomimage':'regeringsstelsel',
         'rowcols':[
             {
             'name':'Terug',
@@ -104,7 +104,7 @@ var rooms = [
     
     { // Floor 2
         'roomname':'Floor2',
-        'roomimage':'entrance',
+        'roomimage':'britishindieentrance',
         'rowcols':[
             {
                 'name':'Terug',
@@ -115,18 +115,18 @@ var rooms = [
             },{
                 'name':'EIC',
                 'destination':'EIC',
-                'row':7,
-                'col':1
+                'row':6,
+                'col':2
             },{
                 'name':'Britse Revoluties',
                 'destination':'Britse Revoluties',
-                'row':4,
+                'row':6,
                 'col':5
             },{
-                'name':'Opkomst Nationalisme India',
+                'name':'Nationalisme India',
                 'destination':'Opkomst Nationalisme India',
-                'row':7,
-                'col':9
+                'row':6,
+                'col':8
             }
         ]
     },{ // EIC
@@ -170,7 +170,7 @@ var rooms = [
     
     { // Floor 3
         'roomname':'Floor3',
-        'roomimage':'entrance',
+        'roomimage':'werkplaatsentrance',
         'rowcols':[
             {
                 'name':'Terug',
@@ -181,17 +181,17 @@ var rooms = [
             },{
                 'name':'Industriële Revolutie',
                 'destination':'Industriële Revolutie',
-                'row':7,
+                'row':6,
                 'col':1
             },{
                 'name':'Reform Bill',
                 'destination':'Reform Bill',
-                'row':4,
+                'row':6,
                 'col':5
             },{
                 'name':'Klassen Maatschappij',
                 'destination':'Klassen Maatschappij',
-                'row':7,
+                'row':6,
                 'col':9
             }
         ]
@@ -242,11 +242,13 @@ var rooms = [
             {
                 'name':'American Revolution',
                 'destination':'Floor1',
+                'type':'info',
                 'row':7,
                 'col':1
             },{
                 'name':'Brits-Indië',
                 'destination':'Floor2',
+                'type':'info',
                 'row':4,
                 'col':5
             },{

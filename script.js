@@ -40,7 +40,6 @@ function clearGrid(){
 // Retrieves grid locations for interactive elements
 function placeInteraction(roomnumber){
     //loops through the rows and columns for current room and creates circles in those grid locations
-    console.log(roomnumber);
     for(index=0; index <= rooms[roomnumber].rowcols.length-1; index++){
         var currRow = rooms[roomnumber].rowcols[index].row;
         var currCol = rooms[roomnumber].rowcols[index].col;
@@ -55,12 +54,12 @@ function placeInteraction(roomnumber){
     }
 }
 
-// function creates the html circle with arrow used for interaction
+// function creates the html circle with fontAwesome used for interaction
 function createCircle(roomnumber, destination){
     var circleContainer = document.createElement('div');
     var text = document.createElement('p');
     var circle = document.createElement('div');
-    var arrow = document.createElement('i');
+    var fontAwesome = document.createElement('i');
 
     circleContainer.setAttribute('class', 'circleContainer');
 
@@ -69,15 +68,16 @@ function createCircle(roomnumber, destination){
     circle.setAttribute('class', 'circle circleContainerChild');
     text.setAttribute('class', 'circleContainerChild');
 
-    arrow.setAttribute('class', 'fa-solid fa-angle-up fa-inverse fa-2xl');
-   
+    if(rooms[roomnumber].rowcols[destination].type == 'info') fontAwesome.setAttribute('class', 'fa-solid fa-info fa-inverse fa-2xl');
+    else fontAwesome.setAttribute('class', 'fa-solid fa-angle-up fa-inverse fa-2xl');
+
+    circle.appendChild(fontAwesome);
+    circleContainer.appendChild(circle);
+    
     if(rooms[roomnumber].rowcols[destination].name) {
         text.innerHTML = "Ga naar: " + rooms[roomnumber].rowcols[destination].name/*.replace(/([A-Z])/g, ' $1')*/;
+        circleContainer.appendChild(text);
     }
-
-    circle.appendChild(arrow);
-    circleContainer.appendChild(circle);
-    circleContainer.appendChild(text);
 
     return circleContainer;
 }
@@ -99,9 +99,14 @@ function setCircle(roomnumber, index){
     circle.onclick = function(){
         rowcolid = this.id.substr(this.id.length - 1);
 
-        //if destination is empty, dont run loadnewpage
-        if(rooms[roomnumber].rowcols[rowcolid].destination) loadNewPage(rooms[roomnumber].rowcols[rowcolid].destination);
+        if(rooms[roomnumber].rowcols[rowcolid].type == 'info'){
+            showPopup();
+        }
+        else {
+            if(rooms[roomnumber].rowcols[rowcolid].destination) loadNewPage(rooms[roomnumber].rowcols[rowcolid].destination);
+        }
     };
+    
 }
 
 function loadNewPage(room){
@@ -111,4 +116,9 @@ function loadNewPage(room){
 
     var roomdata = rooms.find( ({ roomname }) => roomname === room);
     container.style.backgroundImage = 'url(img/'+roomdata.roomimage+'.jpg)';
+}
+
+function showPopup(){
+    var modal = new bootstrap.Modal(document.getElementById('descriptionModal'));
+    modal.show();
 }
