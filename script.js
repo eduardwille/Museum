@@ -14,7 +14,7 @@ window.onload = function(){
 // Creates the grid used for interactive elements
 function createGrid(){
     var rows = 10;
-    var cols = 10;
+    var cols = 18;
 
     for(index = 1; index <= rows; index++){
         var rowEl = document.createElement('div');
@@ -100,7 +100,7 @@ function setCircle(roomnumber, index){
         rowcolid = this.id.substr(this.id.length - 1);
 
         if(rooms[roomnumber].rowcols[rowcolid].type == 'info'){
-            showPopup();
+            showPopup(rooms[roomnumber].rowcols[rowcolid].title, rooms[roomnumber].rowcols[rowcolid].description);
         }
         else {
             if(rooms[roomnumber].rowcols[rowcolid].destination) loadNewPage(rooms[roomnumber].rowcols[rowcolid].destination);
@@ -118,7 +118,15 @@ function loadNewPage(room){
     container.style.backgroundImage = 'url(img/'+roomdata.roomimage+'.jpg)';
 }
 
-function showPopup(){
+function showPopup(title, description){
     var modal = new bootstrap.Modal(document.getElementById('descriptionModal'));
+    var modalTitle = document.getElementById('descriptionModalTitle');
+    var modalDesc = document.getElementById('descriptionModalDesc');
     modal.show();
+
+    if(!title) title = "Couldn't find the title";
+    if(!description) description = "Couldn't find the description";
+
+    modalTitle.innerHTML = title;
+    modalDesc.innerHTML = description;
 }

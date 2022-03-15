@@ -8,34 +8,34 @@ var rooms = [
                 'destination':'Entrance',
                 'rotation':180,
                 'row':9,
-                'col':5
-            },{
-                'name':'Amerikaanse Revolutie',
-                'destination':'Amerikaanse Revolutie',
-                'row':7,
-                'col':2
+                'col':9
             },{
                 'name':'George Washington',
                 'destination':'GeorgeWashington',
                 'rotation':270,
                 'row':7,
-                'col':0
+                'col':1
+            },{
+                'name':'Amerikaanse Revolutie',
+                'destination':'Amerikaanse Revolutie',
+                'row':7,
+                'col':4
             },{
                 'name':'Koloniën en Plantages',
                 'destination':'Koloniën en Plantages',
                 'row':7,
-                'col':4
+                'col':8
             },{
                 'name':'Regeringsstelsel',
                 'destination':'Regeringsstelsel',
                 'row':7,
-                'col':7
+                'col':12
             },{
                 'name':'Hamilton',
                 'destination':'Hamilton',
                 'rotation':90,
                 'row':7,
-                'col':10
+                'col':17
             }
         ]
     },{ // Amerikaanse Revolutie
@@ -43,12 +43,30 @@ var rooms = [
         'roomimage':'americarevolutie',
         'rowcols':[
             {
-            'name':'Terug',
-            'destination':'Floor1',
-            'rotation':180,
-            'row':9,
-            'col':5
-            }
+                'name':'Terug',
+                'destination':'Floor1',
+                'rotation':180,
+                'row':9,
+                'col':9
+            },{
+                'type':'info',
+                'title':'Boston Tea Party',
+                'description':'Verhaal over de boston tea party...',
+                'row':5,
+                'col':7
+            },{
+                'type':'info',
+                'title':'Standstill',
+                'description':'Verhaal over de standstill...',
+                'row':5,
+                'col':12
+            },{
+                'type':'info',
+                'title':'Revolutie',
+                'description':'Verhaal over de revolutie in amerika...',
+                'row':6,
+                'col':16
+            }   
         ]
     },{ // Kolonies en plantages
         'roomname':'Koloniën en Plantages',
@@ -59,7 +77,7 @@ var rooms = [
             'destination':'Floor1',
             'rotation':180,
             'row':9,
-            'col':5
+            'col':9
             }
         ]
     },{ // Regeringsstelsel
@@ -71,7 +89,7 @@ var rooms = [
             'destination':'Floor1',
             'rotation':180,
             'row':9,
-            'col':5
+            'col':9
             }
         ]
     },{ // George Washington
@@ -83,7 +101,7 @@ var rooms = [
                 'destination':'Floor1',
                 'rotation':180,
                 'row':9,
-                'col':5
+                'col':9
             }
         ]
     },{ // Hamilton
@@ -95,7 +113,7 @@ var rooms = [
                 'destination':'Floor1',
                 'rotation':180,
                 'row':9,
-                'col':5
+                'col':9
             }
         ]
     },
@@ -111,22 +129,22 @@ var rooms = [
                 'destination':'Entrance',
                 'rotation':180,
                 'row':9,
-                'col':5
+                'col':9
             },{
                 'name':'EIC',
                 'destination':'EIC',
                 'row':6,
-                'col':2
+                'col':4
             },{
                 'name':'Britse Revoluties',
                 'destination':'Britse Revoluties',
                 'row':6,
-                'col':5
+                'col':9
             },{
                 'name':'Nationalisme India',
                 'destination':'Opkomst Nationalisme India',
                 'row':6,
-                'col':8
+                'col':14
             }
         ]
     },{ // EIC
@@ -138,7 +156,7 @@ var rooms = [
             'destination':'Floor2',
             'rotation':180,
             'row':9,
-            'col':5
+            'col':9
             }
         ]
     },{ // Britse Revoluties
@@ -150,7 +168,7 @@ var rooms = [
             'destination':'Floor2',
             'rotation':180,
             'row':9,
-            'col':5
+            'col':9
             }
         ]
     },{ // Opkomst Nationalisme India
@@ -162,7 +180,7 @@ var rooms = [
             'destination':'Floor2',
             'rotation':180,
             'row':9,
-            'col':5
+            'col':9
             }
         ]
     },
@@ -177,22 +195,22 @@ var rooms = [
                 'destination':'Entrance',
                 'rotation':180,
                 'row':9,
-                'col':5
+                'col':9
             },{
                 'name':'Industriële Revolutie',
                 'destination':'Industriële Revolutie',
                 'row':6,
-                'col':1
+                'col':3
             },{
                 'name':'Reform Bill',
                 'destination':'Reform Bill',
                 'row':6,
-                'col':5
+                'col':9
             },{
                 'name':'Klassen Maatschappij',
                 'destination':'Klassen Maatschappij',
                 'row':6,
-                'col':9
+                'col':15
             }
         ]
     },{ // Industriële Revolutie
@@ -204,7 +222,7 @@ var rooms = [
             'destination':'Floor3',
             'rotation':180,
             'row':9,
-            'col':5
+            'col':9
             }
         ]
     },{ // Reform Bill
@@ -216,7 +234,7 @@ var rooms = [
             'destination':'Floor3',
             'rotation':180,
             'row':9,
-            'col':5
+            'col':9
             }
         ]
     },{ // Klassen Maatschappij
@@ -228,7 +246,7 @@ var rooms = [
             'destination':'Floor3',
             'rotation':180,
             'row':9,
-            'col':5
+            'col':9
             }
         ]
     },
@@ -242,20 +260,18 @@ var rooms = [
             {
                 'name':'American Revolution',
                 'destination':'Floor1',
-                'type':'info',
                 'row':7,
-                'col':1
+                'col':2
             },{
                 'name':'Brits-Indië',
                 'destination':'Floor2',
-                'type':'info',
                 'row':4,
-                'col':5
+                'col':9
             },{
                 'name':'Werkplaats van de wereld',
                 'destination':'Floor3',
                 'row':7,
-                'col':9
+                'col':16
             }
         ]
     }
