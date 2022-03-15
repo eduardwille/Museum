@@ -14,9 +14,9 @@ window.onload = function(){
 // Creates the grid used for interactive elements
 function createGrid(){
     var rows = 10;
-    var cols = 10;
+    var cols = 18;
 
-    for(index = 0; index <= rows; index++){
+    for(index = 1; index <= rows; index++){
         var rowEl = document.createElement('div');
         rowEl.setAttribute('class', 'row');
         
@@ -40,7 +40,6 @@ function clearGrid(){
 // Retrieves grid locations for interactive elements
 function placeInteraction(roomnumber){
     //loops through the rows and columns for current room and creates circles in those grid locations
-    console.log(roomnumber);
     for(index=0; index <= rooms[roomnumber].rowcols.length-1; index++){
         var currRow = rooms[roomnumber].rowcols[index].row;
         var currCol = rooms[roomnumber].rowcols[index].col;
@@ -55,12 +54,12 @@ function placeInteraction(roomnumber){
     }
 }
 
-// function creates the html circle with arrow used for interaction
+// function creates the html circle with fontAwesome used for interaction
 function createCircle(roomnumber, destination){
     var circleContainer = document.createElement('div');
     var text = document.createElement('p');
     var circle = document.createElement('div');
-    var arrow = document.createElement('i');
+    var fontAwesome = document.createElement('i');
 
     circleContainer.setAttribute('class', 'circleContainer');
 
@@ -69,15 +68,16 @@ function createCircle(roomnumber, destination){
     circle.setAttribute('class', 'circle circleContainerChild');
     text.setAttribute('class', 'circleContainerChild');
 
-    arrow.setAttribute('class', 'fa-solid fa-angle-up fa-inverse fa-2xl');
-   
-    if(rooms[roomnumber].rowcols[destination].name) {
-        text.innerHTML = "Go to: " + rooms[roomnumber].rowcols[destination].name/*.replace(/([A-Z])/g, ' $1')*/;
-    }
+    if(rooms[roomnumber].rowcols[destination].type == 'info') fontAwesome.setAttribute('class', 'fa-solid fa-info fa-inverse fa-2xl');
+    else fontAwesome.setAttribute('class', 'fa-solid fa-angle-up fa-inverse fa-2xl');
 
-    circle.appendChild(arrow);
+    circle.appendChild(fontAwesome);
     circleContainer.appendChild(circle);
-    circleContainer.appendChild(text);
+    
+    if(rooms[roomnumber].rowcols[destination].name) {
+        text.innerHTML = "Ga naar: " + rooms[roomnumber].rowcols[destination].name/*.replace(/([A-Z])/g, ' $1')*/;
+        circleContainer.appendChild(text);
+    }
 
     return circleContainer;
 }
@@ -99,9 +99,14 @@ function setCircle(roomnumber, index){
     circle.onclick = function(){
         rowcolid = this.id.substr(this.id.length - 1);
 
-        //if destination is empty, dont run loadnewpage
-        if(rooms[roomnumber].rowcols[rowcolid].destination) loadNewPage(rooms[roomnumber].rowcols[rowcolid].destination);
+        if(rooms[roomnumber].rowcols[rowcolid].type == 'info'){
+            showPopup(rooms[roomnumber].rowcols[rowcolid].title, rooms[roomnumber].rowcols[rowcolid].description);
+        }
+        else {
+            if(rooms[roomnumber].rowcols[rowcolid].destination) loadNewPage(rooms[roomnumber].rowcols[rowcolid].destination);
+        }
     };
+    
 }
 
 function loadNewPage(room){
@@ -111,4 +116,17 @@ function loadNewPage(room){
 
     var roomdata = rooms.find( ({ roomname }) => roomname === room);
     container.style.backgroundImage = 'url(img/'+roomdata.roomimage+'.jpg)';
+}
+
+function showPopup(title, description){
+    var modal = new bootstrap.Modal(document.getElementById('descriptionModal'));
+    var modalTitle = document.getElementById('descriptionModalTitle');
+    var modalDesc = document.getElementById('descriptionModalDesc');
+    modal.show();
+
+    if(!title) title = "Couldn't find the title";
+    if(!description) description = "Couldn't find the description";
+
+    modalTitle.innerHTML = title;
+    modalDesc.innerHTML = description;
 }
