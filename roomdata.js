@@ -78,7 +78,25 @@ var rooms = [
             'rotation':180,
             'row':9,
             'col':9
-            }
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':7
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':12
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':16
+            } 
         ]
     },{ // Regeringsstelsel
         'roomname':'Regeringsstelsel',
@@ -90,7 +108,25 @@ var rooms = [
             'rotation':180,
             'row':9,
             'col':9
-            }
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':2
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':7
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':12
+            } 
         ]
     },{ // George Washington
         'roomname':'GeorgeWashington',
@@ -102,7 +138,19 @@ var rooms = [
                 'rotation':180,
                 'row':9,
                 'col':9
-            }
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':7
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':11
+            } 
         ]
     },{ // Hamilton
         'roomname':'Hamilton',
@@ -223,6 +271,24 @@ var rooms = [
             'rotation':180,
             'row':9,
             'col':9
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':3
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':9
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':15
             }
         ]
     },{ // Reform Bill
@@ -235,6 +301,18 @@ var rooms = [
             'rotation':180,
             'row':9,
             'col':9
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':3
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':15
             }
         ]
     },{ // Klassen Maatschappij
@@ -247,6 +325,24 @@ var rooms = [
             'rotation':180,
             'row':9,
             'col':9
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':3
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':9
+            },{
+                'type':'info',
+                'title':'',
+                'description':'',
+                'row':5,
+                'col':15
             }
         ]
     },
